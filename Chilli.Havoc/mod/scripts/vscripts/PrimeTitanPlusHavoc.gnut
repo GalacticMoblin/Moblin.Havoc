@@ -1,0 +1,59 @@
+global function PrimeTitanPlusHavoc_Init
+void function PrimeTitanPlusHavoc_Init() {
+    #if SERVER
+
+		AddSpawnCallback("npc_titan", SetTitanLoadout );
+
+    #endif
+}
+
+
+//Apply loadout
+
+void function SetTitanLoadout( entity titan )
+{
+	#if SERVER
+	if (IsValid( titan )) //Anti Crash
+	{
+		entity player = GetPetTitanOwner( titan )
+		entity soul = titan.GetTitanSoul()
+
+		if (IsValid( soul ) && IsValid( player )) //Anti Crash 2
+
+		{
+			array<entity> weapons = titan.GetMainWeapons()
+
+ 			//Havoc
+			if (titan.GetModelName() == $"models/titans/light/titan_light_ronin_prime.mdl")
+			{
+				SendHudMessage(player, "Havoc Loadout Applied\n To use regular loadout, unequip prime titan skin.",  -1, 0.2, 200, 200, 225, 255, 0.15, 6, 1);
+
+				//Offence
+				titan.TakeOffhandWeapon(OFFHAND_ANTIRODEO)
+				titan.GiveOffhandWeapon("mp_titanweapon_supercharge", OFFHAND_ANTIRODEO )
+
+        //Melee
+        titan.TakeOffhandWeapon(OFFHAND_MELEE)
+        titan.GiveOffhandWeapon("melee_titan_punch", OFFHAND_MELEE)
+
+				//Defence
+				titan.TakeOffhandWeapon(OFFHAND_SPECIAL)
+				titan.GiveOffhandWeapon("mp_titanweapon_smoke_bomb", OFFHAND_SPECIAL )
+
+				//Tactical
+				titan.TakeOffhandWeapon(OFFHAND_RIGHT)
+				//titan.GiveOffhandWeapon("", OFFHAND_RIGHT )
+
+				//Weapon
+				titan.TakeWeaponNow( weapons[0].GetWeaponClassName() )
+				titan.GiveWeapon ("mp_titanweapon_havoc_launcher")
+
+				//Titan Core
+				titan.TakeOffhandWeapon(OFFHAND_EQUIPMENT)
+				//titan.GiveOffhandWeapon( "", OFFHAND_EQUIPMENT )
+
+			}
+		}
+	}
+	#endif
+}

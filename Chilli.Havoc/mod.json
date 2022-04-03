@@ -1,0 +1,39 @@
+{
+    "Name": "Chilli.Havoc",
+    "Description": "Implements the Havoc Titan based off of cut content. (Special Thanks to 2009 Memes, Dinorush, Peepeepoopoo and EXRILL)",
+    "LoadPriority": 1,
+    "RequiredOnClient": true,
+    "Version": "0.2.4",
+
+    "Scripts": [
+        {
+            "Path": "weapons/mp_titanweapon_havoc_launcher.nut",
+            "RunOn": "( CLIENT || SERVER ) && MP",
+        },
+        {
+            "Path": "weapons/mp_titanweapon_supercharge.nut",
+            "RunOn": "( CLIENT || SERVER ) && MP",
+        },
+        {
+            "Path": "weapons/mp_titanweapon_smoke_bomb.nut",
+            "RunOn": "( CLIENT || SERVER ) && MP",
+        },
+        {
+            "Path": "sh_Havoc_util.nut",
+            "RunOn": "( CLIENT || SERVER ) && MP",
+            "ClientCallback": {
+                "After": "HavocPrecache"
+            },
+            "ServerCallback": {
+                "After": "HavocPrecache"
+            }
+        },
+        {
+          "Path": "PrimeTitanPlusHavoc.gnut",
+          "RunOn": "SERVER || CLIENT",
+          "ServerCallback": {
+              "After": "PrimeTitanPlus_Init"
+          }
+        },
+    ]
+}
