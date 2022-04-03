@@ -11,7 +11,7 @@
             "RunOn": "( CLIENT || SERVER ) && MP",
         },
         {
-            "Path": "weapons/mp_titanweapon_supercharge.nut",
+            "Path": "weapons/mp_titanability_supercharge.nut",
             "RunOn": "( CLIENT || SERVER ) && MP",
         },
         {
@@ -19,7 +19,7 @@
             "RunOn": "( CLIENT || SERVER ) && MP",
         },
         {
-            "Path": "sh_Havoc_util.nut",
+            "Path": "sh_havoc_util.nut",
             "RunOn": "( CLIENT || SERVER ) && MP",
             "ClientCallback": {
                 "After": "HavocPrecache"
@@ -32,7 +32,7 @@
           "Path": "PrimeTitanPlusHavoc.gnut",
           "RunOn": "SERVER || CLIENT",
           "ServerCallback": {
-              "After": "PrimeTitanPlus_Init"
+              "After": "PrimeTitanPlusHavoc_Init"
           }
         },
     ]
