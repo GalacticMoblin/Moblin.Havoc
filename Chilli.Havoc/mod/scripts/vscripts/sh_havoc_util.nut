@@ -32,7 +32,7 @@ void function HavocPrecache()
 	//RegisterNewVortexIgnoreClassname("mp_titancore_stormcore", true)
 	PrimeTitanPlusHavoc_Init()
 	MpTitanweaponHavocLauncher_Init()
-	MpTitanweaponSuperCharge_Init()
+	MpTitanabilitySuperCharge_Init()
 	MpTitanWeaponSmokeBomb_Init()
 	#if SERVER
 		//GameModeRulesRegisterTimerCreditException(eDamageSourceId.mp_titancore_storm_core)

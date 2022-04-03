@@ -30,7 +30,7 @@ void function SetTitanLoadout( entity titan )
 
 				//Offence
 				titan.TakeOffhandWeapon(OFFHAND_ANTIRODEO)
-				titan.GiveOffhandWeapon("mp_titanweapon_supercharge", OFFHAND_ANTIRODEO )
+				titan.GiveOffhandWeapon("mp_titanability_supercharge", OFFHAND_ANTIRODEO )
 
         //Melee
         titan.TakeOffhandWeapon(OFFHAND_MELEE)
